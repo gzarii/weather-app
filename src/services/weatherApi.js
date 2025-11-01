@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = "41b45b66d2cc8a281acf136c06d4639d"; // Replace with your OpenWeatherMap API key
+const API_KEY = "41b45b66d2cc8a281acf136c06d4639d";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 const GEO_URL = "https://api.openweathermap.org/geo/1.0";
 
