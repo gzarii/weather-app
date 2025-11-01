@@ -2,8 +2,6 @@
 
 A modern, responsive weather dashboard built with React, Redux Toolkit, and Material-UI that provides current weather data, forecasts, and favorites management.
 
-![Weather Dashboard]
-
 ## Features
 
 - **Current Weather Display**
@@ -41,8 +39,8 @@ A modern, responsive weather dashboard built with React, Redux Toolkit, and Mate
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd weather-application
+   git clone https://github.com/gzarii/weather-app
+   cd weather-app
    ```
 
 2. Install dependencies:
