@@ -163,10 +163,6 @@ The application integrates with multiple services:
 3. Make your changes
 4. Submit a pull request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Credits
 
 - Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
