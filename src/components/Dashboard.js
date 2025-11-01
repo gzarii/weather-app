@@ -83,7 +83,7 @@ const Dashboard = () => {
   const formatChartData = () => {
     if (!forecast.list) return [];
     return forecast.list.slice(0, 8).map((item) => ({
-      time: new Date(item.dt * 1000).toLocaleTimeString(),
+      time: item.dt * 1000, // Pass timestamp in milliseconds
       temp: item.main.temp,
       speed: item.wind.speed,
     }));

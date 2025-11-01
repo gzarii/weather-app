@@ -35,12 +35,17 @@ export const TemperatureChart = ({ data, unit }) => {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               dataKey="time"
-              tickFormatter={(time) =>
-                new Date(time).toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })
-              }
+              tickFormatter={(timestamp) => {
+                try {
+                  return new Date(timestamp).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  });
+                } catch (error) {
+                  console.error("Date formatting error:", error);
+                  return "Invalid Time";
+                }
+              }}
             />
             <YAxis
               label={{
@@ -50,7 +55,14 @@ export const TemperatureChart = ({ data, unit }) => {
               }}
             />
             <Tooltip
-              labelFormatter={(label) => new Date(label).toLocaleString()}
+              labelFormatter={(timestamp) => {
+                try {
+                  return new Date(timestamp).toLocaleString();
+                } catch (error) {
+                  console.error("Date formatting error:", error);
+                  return "Invalid Date";
+                }
+              }}
               formatter={(value) =>
                 formatTemperature(value) + `°${unit === "celsius" ? "C" : "F"}`
               }
