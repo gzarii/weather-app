@@ -4,6 +4,12 @@ A modern, responsive weather dashboard built with React, Redux Toolkit, and Mate
 
 ## Features
 
+- **Authentication**
+  - Google Sign-In integration
+  - Protected routes and secure access
+  - Persistent user sessions
+  - User-specific favorites and settings
+
 - **Current Weather Display**
   - Real-time weather information
   - Temperature display (Celsius/Fahrenheit)
@@ -31,9 +37,11 @@ A modern, responsive weather dashboard built with React, Redux Toolkit, and Mate
 - **State Management**: Redux Toolkit
 - **UI Components**: Material-UI
 - **Charts**: Recharts
+- **Authentication**: Firebase Authentication
 - **API**: OpenWeatherMap
 - **Storage**: Local Storage for persistence
 - **Routing**: React Router
+- **Backend Services**: Firebase
 
 ## Installation
 
@@ -48,9 +56,19 @@ A modern, responsive weather dashboard built with React, Redux Toolkit, and Mate
    npm install
    ```
 
-3. Create a `.env` file in the root directory and add your OpenWeatherMap API key:
+3. Create a `.env` file in the root directory and add your API keys and Firebase configuration:
    ```
-   REACT_APP_OPENWEATHER_API_KEY=your_api_key_here
+   # OpenWeather API
+   REACT_APP_OPENWEATHER_API_KEY=your_openweather_api_key
+
+   # Firebase Configuration
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+   REACT_APP_FIREBASE_MEASUREMENT_ID=your_firebase_measurement_id
    ```
 
 4. Start the development server:
@@ -60,7 +78,13 @@ A modern, responsive weather dashboard built with React, Redux Toolkit, and Mate
 
 ## Usage
 
-1. **View Current Weather**
+1. **Authentication**
+   - Sign in using your Google account
+   - Access to all features requires authentication
+   - Your preferences and favorites are tied to your account
+   - Secure logout available in the navigation bar
+
+2. **View Current Weather**
    - Enter a city name in the search bar
    - View detailed weather information including temperature, humidity, wind speed, and more
 
@@ -86,33 +110,51 @@ weather-application/
 │   ├── components/          # React components
 │   ├── features/           # Redux slices
 │   ├── services/           # API services
-│   ├── app/                # App configuration
+│   ├── contexts/           # Context providers (Auth)
+│   ├── config/            # Configuration files
+│   ├── app/               # App configuration
 │   └── ...
-├── public/                 # Static files
+├── public/                # Static files
 └── ...
 ```
 
 ## Key Components
 
+- **Login**: Google authentication interface
+- **PrivateRoute**: Protected route wrapper for authenticated access
 - **Dashboard**: Main view showing current weather and favorites
 - **DetailedView**: Detailed weather information and forecasts
 - **WeatherChart**: Interactive weather trend visualizations
 - **SearchBar**: City search functionality
+- **AuthContext**: Authentication state management
 
 ## API Integration
 
-The application uses the OpenWeatherMap API for:
+The application integrates with multiple services:
+
+**OpenWeatherMap API**:
 - Current weather data
 - 24-hour forecasts
 - 5-day forecasts
 
+**Firebase**:
+- Authentication services
+- Google Sign-In
+- User session management
+- Secure data access
+
 ## State Management
 
-Redux Toolkit is used for:
+**Redux Toolkit**:
 - Weather data management
 - Favorites management
 - Temperature unit preferences
 - API call states
+
+**Context API**:
+- Authentication state
+- User session management
+- Protected route handling
 
 ## Contributing
 

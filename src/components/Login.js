@@ -1,16 +1,16 @@
 import React from "react";
 import { Button, Box, Typography, Paper } from "@mui/material";
 import { Google as GoogleIcon } from "@mui/icons-material";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { googleSignIn } = useAuth();
+  const { signInWithGoogle } = useAuth();
   const navigate = useNavigate();
 
   const handleGoogleSignIn = async () => {
     try {
-      await googleSignIn();
+      await signInWithGoogle();
       navigate("/");
     } catch (error) {
       console.error("Error signing in with Google:", error);
