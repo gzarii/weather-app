@@ -2,6 +2,8 @@
 
 A modern, responsive weather dashboard built with React, Redux Toolkit, and Material-UI that provides current weather data, forecasts, and favorites management.
 
+Live link: https://weather-app-kappa-one-68.vercel.app/
+
 ## Features
 
 - **Authentication**
